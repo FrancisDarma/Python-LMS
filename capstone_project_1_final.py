@@ -243,23 +243,30 @@ while True :
             break
     
     while (opsi == '3'):
+        
         cek_update = ''
         cek_index_data = ''
         konfirmasi_ubah = ''
         konfirmasi_lanjut = ''
         lower_pilih_kolom = ''
         keys_1 = ''
-        opsi_update = input('''
+        
+        def menu_update():
+            global opsi_update
+            opsi_update = input('''
             ============= Ubah Daftar Buku & Peminjam =================    
             1. Ubah daftar buku & peminjam
             2. Kembali ke menu utama
             Silahkan Pilih Main Menu dengan memasukkan angka 1-2 : ''')
+        menu_update()
+        
         if (not opsi_update == '1' and not opsi_update == '2'):
             print ('''\n
                Pilihan yang Anda masukkan salah!
                Harap memasukkan input yang benar.
                ''')
             continue
+        
         while (opsi_update == '1'):
             a = ''
             values = []
@@ -340,12 +347,15 @@ while True :
         
     while (opsi == '4'):
         konfirmasi_lanjut = ''
-        opsi_delete = input('''
+        def menu_hapus():
+            global opsi_delete
+            opsi_delete = input('''
             ============= Hapus Buku & Peminjam =================    
             1. Hapus data buku & peminjam
             2. Hapus semua data
             3. Kembali ke menu utama
             Silahkan Pilih Main Menu dengan memasukkan angka 1-2 : ''')
+        menu_hapus()
         if (not opsi_delete == '1' and not opsi_delete == '2' and not opsi_delete =='3'):
             print ('''\n
                Pilihan yang Anda masukkan salah!
