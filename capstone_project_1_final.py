@@ -148,6 +148,7 @@ while True :
             break
    
     while (opsi == '2'):
+        
         def sub_menu_create(data):
             global opsi_create
             opsi_create = input('''
@@ -156,6 +157,7 @@ while True :
             2. Kembali ke menu utama
             Silahkan Pilih Main Menu dengan memasukkan angka 1-2 : ''')
         sub_menu_create(data_buku)
+        
         while (not opsi_create == '1' and not opsi_create == '2'):
             print ('''\n
                Pilihan yang Anda masukkan salah!
@@ -185,7 +187,7 @@ while True :
                 if (konfirmasi.upper()) == 'TIDAK' :
                     break
                 if (konfirmasi.upper()) == 'YA' :
-                    data_buku.update({record[0]:
+                    data_buku.update({record:
                     {
                     'nama_buku': nama_buku,
                     'genre': genre,
@@ -194,7 +196,8 @@ while True :
                     'tanggal_pinjam': tanggal_pinjam,
                     'tanggal_kembali': tanggal_kembali}})
                     print('Data berhasil tersimpan')
-
+                break
+                
             for keys in data_buku.keys():
                 values.append(keys)
             for item in values:
